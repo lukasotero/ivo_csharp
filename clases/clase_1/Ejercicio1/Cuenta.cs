@@ -19,7 +19,8 @@ namespace Ejercicio1
             if (saldo > 0)
             {
                 this.saldo += saldo;
-            } else
+            }
+            else
             {
                 Console.WriteLine("El monto a acreditar no puede ser menor que 0.");
             }
@@ -27,8 +28,8 @@ namespace Ejercicio1
 
         // Getter
         public int GetSaldo()
-        { 
-            return saldo; 
+        {
+            return saldo;
         }
     }
 }

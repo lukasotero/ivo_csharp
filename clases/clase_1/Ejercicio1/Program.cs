@@ -4,14 +4,14 @@ namespace Ejercicio1
 {
     public class Program
     {
-        /* 1) Realizar un programa que dada una clase "Cuenta",
+        /* 
+         * 1) Realizar un programa que dada una clase "Cuenta",
          * cuyo atributo es el saldo de la misma permita 'Acreditar' saldo sobre la misma.
-         * El valor que se acredita no puede ser menor que 0.
-
-        Debe incluir un método constructor que permita inicializar el valor inicial del saldo.
-
-        Crear los objetos necesarios para realizar las pruebas con los llamados a los métodos correspondientes.
-        */
+         * 
+         * - El valor que se acredita no puede ser menor que 0.
+         * - Debe incluir un método constructor que permita inicializar el valor inicial del saldo.
+         * - Crear los objetos necesarios para realizar las pruebas con los llamados a los métodos correspondientes
+         */
 
         static void Main(string[] args)
         {
