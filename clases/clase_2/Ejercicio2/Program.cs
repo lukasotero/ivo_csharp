@@ -5,7 +5,7 @@ namespace Ejercicio2
     public class Program
     {
         /*
-         * Crea una clase llamada Cuenta que tendrá los siguientes atributos: titular y cantidad (puede tener decimales).
+         * Crea una clase llamada "Cuenta" que tendrá los siguientes atributos: titular y cantidad (puede tener decimales).
          * Crear un constructor con ambos atributos.
          * Crea sus propiedades get, set y el método ToString.
          * 
