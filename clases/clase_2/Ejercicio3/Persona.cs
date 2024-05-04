@@ -12,7 +12,7 @@ namespace Ejercicio3
         private double peso;
         private double altura;
 
-        private static Random random = new Random();
+        private static readonly Random random = new Random();
 
         // Constructores
         public Persona()
