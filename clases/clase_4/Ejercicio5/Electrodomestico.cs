@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ejercicio6
+namespace Ejercicio5
 {
     public class Electrodomestico
     {

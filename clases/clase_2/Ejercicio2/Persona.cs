@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ejercicio3
+namespace Ejercicio2
 {
     public class Persona
     {

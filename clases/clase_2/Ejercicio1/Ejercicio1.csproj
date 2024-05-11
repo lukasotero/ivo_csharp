@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2887EA8E-3F2E-436F-9DF1-E74458E25F9A}</ProjectGuid>
+    <ProjectGuid>{69B8822C-5602-4A47-BADA-5EE750AA9059}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Ejercicio4</RootNamespace>
-    <AssemblyName>Ejercicio4</AssemblyName>
+    <RootNamespace>Ejercicio2</RootNamespace>
+    <AssemblyName>Ejercicio2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Password.cs" />
+    <Compile Include="Cuenta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

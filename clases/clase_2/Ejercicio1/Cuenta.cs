@@ -1,4 +1,4 @@
-﻿namespace Ejercicio2
+﻿namespace Ejercicio1
 {
     public class Cuenta
     {

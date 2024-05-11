@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Ejercicio4
+namespace Ejercicio3
 {
     public class Password
     {
