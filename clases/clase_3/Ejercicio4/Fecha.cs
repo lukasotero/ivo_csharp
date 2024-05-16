@@ -13,44 +13,6 @@
             this.anio = anio;
         }
 
-        public int Dia
-        {
-            get
-            {
-                return dia;
-            }
-            private set
-            {
-                if (value >= 1 && value <= 31)
-                {
-                    dia = value;
-                }
-                else
-                {
-                    dia = 1;
-                }
-            }
-        }
-
-        public int Mes
-        {
-            get
-            {
-                return mes;
-            }
-            private set
-            {
-                if (value >= 1 && value <= 12)
-                {
-                    mes = value;
-                }
-                else
-                {
-                    mes = 1;
-                }
-            }
-        }
-
         // Getters y setters para el atributo
         public int GetDia()
         {
