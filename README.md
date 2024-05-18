@@ -75,7 +75,7 @@ Los métodos que implementa serán:
 - En caso de no cumplir los valores, los mismos deberán ponerse en '1'.
 - Método ToString() que permita visualizar el objeto con el siguiente formato: "mes/dia/año"
 
-## :soon: Ejercicio 5 (está en la clase 4)
+## :heavy_check_mark: Ejercicio 5 (está en la clase 4)
 Crearemos una clase llamada "Electrodomestico" con las siguientes características:
 
 - Sus atributos son precio base, color, consumo energético (letras entre A y F) y peso. 
