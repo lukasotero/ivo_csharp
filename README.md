@@ -115,7 +115,7 @@ Ahora crea una clase ejecutable que realice lo siguiente:
 - Mostrar el precio de cada Electrodomestico y la suma total.
 - Por ejemplo, si tenemos un Electrodomestico con un precio final de 300, otro de 200 y otro de 500, el resultado final será de $1000 (300+200+500).
 
-### :soon: Ejercicio 5.1 (está en la clase 4)
+### :heavy_check_mark: Ejercicio 5.1 (está en la clase 5)
 Crearemos una clase llamada "Electrodomestico" con las siguientes características:
 
 - Sus atributos son precio base, color, consumo energético (letras entre A y F) y peso. Indica que se podrán heredar.
@@ -149,7 +149,7 @@ Los métodos que implementara serán:
 | Entre 50 y 80kg (no inclusive) | $80 |
 | Mayor o igual a 80kg | $100 |
 
-Crear una subclase llamada Lavadora con las siguientes características:
+Crear una subclase llamada "Lavadora" con las siguientes características:
 - Su atributo es carga, además de los atributos heredados.
 - Por defecto, la carga es de 5 kg.
 
@@ -162,7 +162,7 @@ Los métodos que se implementara serán:
 - Método get de carga.
 - precioFinal():, si tiene una carga mayor de 30 kg, aumentara el precio $50, sino es así no se incrementara el precio. Las condiciones en la clase Electrodomestico también deben afectar al precio.
 
-Crear una subclase llamada Television con las siguientes características:
+Crear una subclase llamada "Television" con las siguientes características:
 - Sus atributos son resolución (en pulgadas) y sintonizador TDT (booleano), además de los atributos heredados.
 - Por defecto, la resolución será de 20 pulgadas y no tendrá sintonizador.
 
@@ -184,7 +184,7 @@ Crear una clase ejecutable que realice lo siguiente:
 Por ejemplo, si tenemos un Electrodomestico con un precio final de 300, una lavadora de 200 y una televisión de 500, el resultado final sera de 1000 (300+200+500) para electrodomésticos, 200 para lavadora y 500 para televisión.
 
 # Guia de ejercicios inventados
-## Ejercicio A
+## :soon: Ejercicio A
 Crear una clase llamada "Empleado" con las siguientes características:
 
 Atributos:
@@ -217,7 +217,7 @@ Para cada objeto:
 - Indicar si es jubilado.
 - Mostrar la información de cada objeto.
 
-### Ejercicio B
+### :soon: Ejercicio B
 Crear una clase llamada "Libro" con las siguientes características:
 
 Atributos:

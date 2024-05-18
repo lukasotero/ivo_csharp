@@ -42,7 +42,7 @@ namespace Ejercicio5._1
          | Entre 50 y 80kg (no inclusive) | $80 |
          | Mayor o igual a 80kg | $100 |
          
-         Crear una subclase llamada Lavadora con las siguientes características:
+         Crear una subclase llamada "Lavadora" con las siguientes características:
          - Su atributo es carga, además de los atributos heredados.
          - Por defecto, la carga es de 5 kg.
          
@@ -55,7 +55,7 @@ namespace Ejercicio5._1
          - Método get de carga.
          - precioFinal():, si tiene una carga mayor de 30 kg, aumentara el precio $50, sino es así no se incrementara el precio. Las condiciones en la clase Electrodomestico también deben afectar al precio.
          
-         Crear una subclase llamada Television con las siguientes características:
+         Crear una subclase llamada "Television" con las siguientes características:
          - Sus atributos son resolución (en pulgadas) y sintonizador TDT (booleano), además de los atributos heredados.
          - Por defecto, la resolución será de 20 pulgadas y no tendrá sintonizador.
          
@@ -79,7 +79,46 @@ namespace Ejercicio5._1
 
         static void Main(string[] args)
         {
+            // Crear un array de Electrodomesticos de 10 posiciones
+            Electrodomestico[] electrodomesticos = new Electrodomestico[10];
 
+            // Asignar a cada posición un objeto de las clases anteriores con valores
+            electrodomesticos[0] = new Lavadora(); // Probando el constructor vacío
+            electrodomesticos[1] = new Lavadora(200, 25); // Probando constructor con 2 parametros
+            electrodomesticos[2] = new Lavadora(50, 100, "gris", 'B', 60); // Probando constructor con todos los parametros
+            electrodomesticos[3] = new Lavadora(25, 25, "marron", 'A', 80); // Objeto con errores para comprobar si funcionan las validaciones
+            electrodomesticos[4] = new Lavadora(68, 250, "rojo", 'Z', 10); // Objeto con errores para comprobar si funcionan las validaciones
+            electrodomesticos[5] = new Television(); // Probando el constructor vacío
+            electrodomesticos[6] = new Television(500, 50); // Probando constructor con 2 parametros
+            electrodomesticos[7] = new Television(1080, true, 100, "azul", 'B', 60); // Probando constructor con todos los parametros
+            electrodomesticos[8] = new Television(720, false, 2800, "verde", 'A', 80); // Objeto con errores para comprobar si funcionan las validaciones
+            electrodomesticos[9] = new Television(7200, true, 2000, "negro", 'W', 180); // Objeto con errores para comprobar si funcionan las validaciones
+
+            double totalPrecioElectrodomesticos = 0;
+            double totalPrecioLavadoras = 0;
+            double totalPrecioTelevisiones = 0;
+
+            foreach (var electrodomestico in electrodomesticos)
+            {
+                double precioFinal = electrodomestico.precioFinal();
+                totalPrecioElectrodomesticos += precioFinal;
+
+                if (electrodomestico is Lavadora)
+                {
+                    totalPrecioLavadoras += precioFinal;
+                }
+                else if (electrodomestico is Television)
+                {
+                    totalPrecioTelevisiones += precioFinal;
+                }
+            }
+
+            Console.WriteLine($"Total precio de Electrodomésticos: ${totalPrecioElectrodomesticos}");
+            Console.WriteLine($"Total precio de Lavadoras: ${totalPrecioLavadoras}");
+            Console.WriteLine($"Total precio de Televisores: ${totalPrecioTelevisiones}");
+
+            // Pausear consola
+            Console.Read();
         }
     }
 }

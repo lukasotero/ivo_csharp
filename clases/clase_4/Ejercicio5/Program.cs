@@ -21,19 +21,12 @@ namespace Ejercicio5
             electrodomesticos[8] = new Electrodomestico(220, "gris", 'C', 18);
             electrodomesticos[9] = new Electrodomestico(320, "blanco", 'D', 35);
 
-            // Comprobaciones de consumo y color en todos los objetos
-            for (int i = 0; i < electrodomesticos.Length; i++)
-            {
-                electrodomesticos[i].ComprobarConsumoEnergetico(electrodomesticos[i].ConsumoEnergetico);
-                electrodomesticos[i].ComprobarColor(electrodomesticos[i].Color);
-            }
-
             double totalPrecio = 0;
 
             // Mostrar el precio de cada Electrodomestico y la suma total
             for (int i = 0; i < electrodomesticos.Length; i++)
             {
-                Console.WriteLine($"Electrodomestico {i + 1}: Precio = ${electrodomesticos[i].PrecioFinal()}");
+                Console.WriteLine($"Electrodomestico {i + 1}: ${electrodomesticos[i].PrecioFinal()}");
                 totalPrecio += electrodomesticos[i].PrecioFinal();
             }
 

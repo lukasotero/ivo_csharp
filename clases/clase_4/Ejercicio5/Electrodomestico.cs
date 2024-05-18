@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace Ejercicio5
+﻿namespace Ejercicio5
 {
     public class Electrodomestico
     {
         // Atributos
-        private readonly double precioBase;
-        private readonly String color;
+        private double precioBase;
+        private string color;
         private char consumoEnergetico;
-        private readonly double peso;
+        private double peso;
 
         // Constructores
         public Electrodomestico()
@@ -30,25 +28,25 @@ namespace Ejercicio5
         public Electrodomestico(double precioBase, string color, char consumoEnergetico, double peso)
         {
             this.precioBase = precioBase;
-            this.color = color;
-            this.consumoEnergetico = consumoEnergetico;
+            this.color = comprobarColor(color);
+            this.consumoEnergetico = comprobarConsumoEnergetico(consumoEnergetico);
             this.peso = peso;
         }
 
         // Métodos
-        public void ComprobarConsumoEnergetico(char letra)
+        public char comprobarConsumoEnergetico(char letra)
         {
             if (letra >= 'A' && letra <= 'F')
             {
-                consumoEnergetico = letra;
+                return letra;
             }
             else
             {
-                consumoEnergetico = 'F';
+                return 'F';
             }
         }
 
-        public string ComprobarColor(string color)
+        public string comprobarColor(string color)
         {
             switch (color)
             {
