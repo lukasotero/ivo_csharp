@@ -9,32 +9,37 @@ namespace Electrodomesticos
 {
     public class Electrodomestico
     {
+        // Atributos
         private float preciob = 100;
         private string color = "blanco";
         private char conselectrico = 'F';
         private float peso = 5;
 
+        // Constructores
+        // Acordate de que en el constructor vacío se cargan los atributos por defecto
         public Electrodomestico()
         { 
-            preciob = 100;
-            color = "blanco";
-            conselectrico = 'F';
-            peso = 5;
+            preciob = 100; // Agregado en la corrección
+            color = "blanco"; // Agregado en la corrección
+            conselectrico = 'F'; // Agregado en la corrección
+            peso = 5; // Agregado en la corrección
         }
 
-        public Electrodomestico(float preciob, float peso)
+        public Electrodomestico(float pb, float p)
         {
-            this.preciob = preciob;
-            this.peso = peso;
-        }
-        public Electrodomestico(float preciob, string c, char l, float p)
-        {
-            this.preciob = preciob;
+            preciob = pb;
             peso = p;
+        }
+
+        public Electrodomestico(float preciob, string c, char l, float peso)
+        {
+            this.preciob = preciob;
+            this.peso = peso; // Acordate de usar el .this para diferenciar entre el atributo y el parámetro
             conselectrico = l;
             color = ComprobarColor(c);
         }
 
+        // Getters
         public float Preciob
         {
             get { return preciob; }
@@ -56,8 +61,18 @@ namespace Electrodomesticos
 
         }
 
+        // Métodos
         public char ComprobarConsumo(char letra)
         {
+            /*
+            if (letra <= 'A' || letra >= 'F')
+            { letra = 'F'; }
+            else if (letra >= 'A' && letra <= 'F')
+            { }
+
+            return letra;
+            */
+
             if (letra >= 'A' && letra <= 'F')
             {
                 return letra;
@@ -86,6 +101,7 @@ namespace Electrodomesticos
             }
             return Color;
         }
+
         public float Preciofinal()
         {
             switch (conselectrico)
@@ -129,7 +145,5 @@ namespace Electrodomesticos
 
             return Preciob;
         }
-
-
     }
 }
