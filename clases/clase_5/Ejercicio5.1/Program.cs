@@ -31,7 +31,7 @@ namespace Ejercicio5._1
 
             for (int i = 0; i < electrodomesticos.Length; i++)
             {
-                double precioFinal = electrodomestico.precioFinal();
+                double precioFinal = electrodomesticos[i].precioFinal();
                 totalPrecioElectrodomesticos += precioFinal;
 
                 if (electrodomesticos[i] is Lavadora)
