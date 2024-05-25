@@ -1,59 +1,81 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ejercicio6
 {
     public class Program
     {
-        /*
-        Crear una clase llamada "Serie" con las siguientes características:
-        - Sus atributos son titulo, numero de temporadas, entregado, genero y creador.
-        Por defecto, el numero de temporadas es de 3 temporadas y entregado false. El resto de atributos serán valores por defecto según el tipo del atributo.
-        
-        Los constructores que se implementaran serán:
-        - Un constructor por defecto (sin parámetros).
-        - Un constructor con el titulo y creador. El resto por defecto.
-        - Un constructor con todos los atributos, excepto de entregado.
-        
-        Los métodos que se implementara serán:
-        - Métodos get de todos los atributos, excepto de entregado.
-        - Métodos set de todos los atributos, excepto de entregado.
-        - Sobrescribe los métodos toString.
-        - Entregar(): cambia el atributo entregado a true.
-        - Devolver(): cambia el atributo entregado a false.
-        - IsEntregado(): devuelve el estado del atributo entregado.
-        
-        Crear una clase "Videojuego" con las siguientes características:
-        - Sus atributos son titulo, horas estimadas, entregado, genero y compañia.
-        Por defecto, las horas estimadas serán de 10 horas y entregado false. El resto de atributos serán valores por defecto según el tipo del atributo.
-        
-        Los constructores que se implementaran serán:
-        - Un constructor por defecto (sin parámetros).
-        - Un constructor con el titulo y horas estimadas. El resto por defecto.
-        - Un constructor con todos los atributos, excepto de entregado.
-        
-        - Los métodos que se implementara serán:
-        - Métodos get de todos los atributos, excepto de entregado.
-        - Métodos set de todos los atributos, excepto de entregado.
-        - Sobrescribe los métodos toString.
-        - Entregar(): cambia el atributo entregadoa true.
-        - Devolver(): cambia el atributo entregadoa false.
-        - IsEntregado(): devuelve el estado del atributo entregado.
-        
-        Realizar lo siguiente:
-        - Crear dos arrays, uno de Series y otro de Videojuegos, de 5 posiciones cada uno.
-        - Crear un objeto en cada posición del array, con valores, se pueden usar distintos constructores.
-        - Entregar algunos Videojuegos y Series con el método entregar().
-        - Contar e informar cuantas Series y Videojuegos hay entregados.
-        - Indicar el Videojuego tiene más horas estimadas y la serie con más temporadas. Mostrarlos en pantalla con toda su información (usar el método toString()).
-        */
-
         static void Main(string[] args)
         {
+            // Crear dos arrays, uno de Series y otro de Videojuegos, de 5 posiciones cada uno
+            Serie[] series = new Serie[5];
+            Videojuego[] videojuegos = new Videojuego[5];
 
+            // Crear un objeto en cada posición del array, con valores, se pueden usar distintos constructores
+            series[0] = new Serie();
+            series[1] = new Serie("The Office", "Greg Daniels");
+            series[2] = new Serie("The Mandalorian", 2, "Ciencia Ficción", "Jon Favreau");
+            series[3] = new Serie("The Witcher", 1, "Fantasía", "Lauren Schmidt Hissrich");
+            series[4] = new Serie("The Walking Dead", 10, "Drama", "Frank Darabont");
+
+            videojuegos[0] = new Videojuego();
+            videojuegos[1] = new Videojuego("The Witcher 3: Wild Hunt", 50);
+            videojuegos[2] = new Videojuego("Red Dead Redemption 2", 60, "Aventura", "Rockstar Games");
+            videojuegos[3] = new Videojuego("The Last of Us Part II", 30, "Aventura", "Naughty Dog");
+            videojuegos[4] = new Videojuego("God of War", 40, "Aventura", "Santa Monica Studio");
+
+            // Entregar algunos Videojuegos y Series con el método entregar()
+            videojuegos[0].Entregar();
+            videojuegos[2].Entregar();
+            series[1].Entregar();
+            series[4].Entregar();
+
+            // Contar e informar cuantas Series y Videojuegos hay entregados
+            int seriesEntregadas = 0;
+            int videojuegosEntregados = 0;
+
+            for (int i = 0; i < series.Length;i++)
+            {
+                if (series[i].IsEntregado())
+                {
+                    seriesEntregadas++;
+                }
+            }
+
+            for (int i = 0; i < videojuegos.Length; i++)
+            {
+                if (videojuegos[i].IsEntregado())
+                {
+                    videojuegosEntregados++;
+                }
+            }
+
+            Console.WriteLine($"Hay {seriesEntregadas} series entregadas y {videojuegosEntregados} videojuegos entregados.");
+
+            // Indicar el Videojuego tiene más horas estimadas y la serie con más temporadas. Mostrarlos en pantalla con toda su información (usar el método toString())
+            Videojuego videojuegoMasHoras = videojuegos[0];
+            Serie serieMasTemporadas = series[0];
+
+            for (int i = 0; i < videojuegos.Length; i++)
+            {
+                if (videojuegos[i].GetHorasEstimadas > videojuegoMasHoras.GetHorasEstimadas)
+                {
+                    videojuegoMasHoras = videojuegos[i];
+                }
+            }
+
+            for (int i = 0; i < series.Length; i++)
+            {
+                if (series[i].GetNumeroTemporadas > serieMasTemporadas.GetNumeroTemporadas)
+                {
+                    serieMasTemporadas = series[i];
+                }
+            }
+
+            Console.WriteLine($"\nEl videojuego con más horas estimadas es...\n{videojuegoMasHoras}");
+            Console.WriteLine($"\nLa serie con más temporadas es...\n{serieMasTemporadas}");
+
+            // Pausar la consola
+            Console.Read();
         }
     }
 }

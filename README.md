@@ -1,5 +1,5 @@
 # Guia de ejercicios del profesor
-## :soon: Ejercicio 6 (está en la clase 6)
+## :heavy_check_mark: Ejercicio 6 (está en la clase 6)
 Crear una clase llamada "Serie" con las siguientes características:
 - Sus atributos son titulo, numero de temporadas, entregado, genero y creador.
 Por defecto, el numero de temporadas es de 3 temporadas y entregado false. El resto de atributos serán valores por defecto según el tipo del atributo.
