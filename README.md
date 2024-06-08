@@ -1,4 +1,45 @@
 # Guia de ejercicios del profesor
+## :heavy_check_mark: Ejercicio 8 (está en la clase 7)
+Nos piden realizar una agenda telefónica de contactos.
+Un contacto está definido por un nombre y un teléfono. Un contacto es igual a otro cuando sus nombres son iguales.
+Una agenda de contactos está formada por un conjunto de contactos.
+Se podrá crear de dos formas, indicándoles nosotros el tamaño o con un tamaño por defecto (10).
+
+Los métodos de la agenda serán los siguientes:
+- añadirContacto(Contacto c): Añade un contacto a la agenda, sino se pueden agregar más a la agenda se indicará por pantalla. No se pueden agregar contactos que existan, es decir, no podemos duplicar nombres, aunque tengan distinto teléfono.
+- existeContacto(Contacto c): indica si el contacto pasado existe o no.
+- listarContactos(): Lista toda la agenda.
+- buscaContacto(String nombre): busca un contacto por su nombre y muestra su teléfono.
+- eliminarContacto(Contacto c): elimina el contacto de la agenda, indica si se ha eliminado o no por pantalla.
+- agendaLlena(): indica si la agenda está llena.
+- huecosLibres(): indica cuantos contactos más podemos meter.
+
+Crear un menú con opciones en el programa principal para probar todas estas funcionalidades.
+
+Ejemplo:
+"1. Añadir contacto"
+"2. Listar contactos"
+"3. Buscar contacto"
+"4. Existe contacto"
+"5. Eliminar contacto"
+"6. Contactos disponibles"
+"7. Agenda llena"
+"8. Salir"
+
+## :heavy_check_mark: Ejercicio 7 (está en la clase 7)
+Realizar una clase Raices, que permitirá resolver ecuación de 2º grado.
+Se tienen los 3 coeficientes como atributos (a, b y c).
+El constructor deberá recibir los 3 valores para construir el objeto.
+
+Las operaciones que se podrán hacer son las siguientes:
+- obtenerRaices(): imprime las 2 posibles soluciones
+- obtenerRaiz(): imprime la única raíz (única solución posible).
+- getDiscriminante(): devuelve el valor del discriminante, el discriminante tiene la siguiente formula, (b^2)-4*a*c.
+- tieneRaices(): devuelve un booleano indicando si tiene dos soluciones, para que esto ocurra, el discriminante debe ser mayor o igual que 0.
+- tieneRaiz(): devuelve un booleano indicando si tiene una única solución, para que esto ocurra, el discriminante debe ser igual que 0.
+- calcular(): mostrara por consola las posibles soluciones que tiene nuestra ecuación, en caso de no existir solución, mostrarlo también.
+- Fórmula ecuación 2º grado: (-b±√((b^2)-(4*a*c)))/(2*a)
+
 ## :heavy_check_mark: Ejercicio 6 (está en la clase 6)
 Crear una clase llamada "Serie" con las siguientes características:
 - Sus atributos son titulo, numero de temporadas, entregado, genero y creador.
