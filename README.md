@@ -1,5 +1,5 @@
 # Windows Form
-## :soon: Ejercicio 1 (está en la clase 8)
+## :heavy_check_mark: Ejercicio 1 (está en la clase 8)
 Realizar un formulario como el de la imagen de ejemplo, teniendo en cuenta las siguientes restricciones de uso:
 
 - Todos los campos deben iniciar vacios.
@@ -28,14 +28,14 @@ Los métodos de la agenda serán los siguientes:
 Crear un menú con opciones en el programa principal para probar todas estas funcionalidades.
 
 Ejemplo:
-"1. Añadir contacto"
-"2. Listar contactos"
-"3. Buscar contacto"
-"4. Existe contacto"
-"5. Eliminar contacto"
-"6. Contactos disponibles"
-"7. Agenda llena"
-"8. Salir"
+- "1. Añadir contacto"
+- "2. Listar contactos"
+- "3. Buscar contacto"
+- "4. Existe contacto"
+- "5. Eliminar contacto"
+- "6. Contactos disponibles"
+- "7. Agenda llena"
+- "8. Salir"
 
 ## :heavy_check_mark: Ejercicio 7 (está en la clase 7)
 Realizar una clase Raices, que permitirá resolver ecuación de 2º grado.

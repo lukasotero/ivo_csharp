@@ -1,22 +1,68 @@
+using System.Text.RegularExpressions;
+
 namespace FormsEjercicio1
 {
-    public partial class Form1 : Form
+    public partial class SingUpForm : Form
     {
-        public Form1()
+        public SingUpForm()
         {
             InitializeComponent();
         }
 
         // Boton de Submit
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            tbEmail.Text = tbEmail.Text.Trim();
-
-            if (tbEmail.Text == "")
+            // Validar que el campo de email sea un email válido
+            if (!IsValidEmail(tbEmail.Text))
             {
-                MessageBox.Show("El campo de email no puede estar vacio");
+                MessageBox.Show("El campo de email no es válido.");
                 return;
             }
+
+            // Validar si las contraseñas coinciden
+            if (!IsValidPassword(tbPassword.Text, tbPasswordConfirm.Text))
+            {
+                MessageBox.Show("El campo de email no es válido.");
+                return;
+            }
+
+            MessageBox.Show("Está todo OK");
         }
+
+        // Función para validar un email
+        private bool IsValidEmail(string email)
+        {
+            // Validar que el campo de email no esté vacío
+            if (string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("El campo de email no puede estar vacío.");
+                return false;
+            }
+
+            // Validar que el campo de email sea un email válido
+            string patron = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+
+            if (!Regex.IsMatch(tbEmail.Text, patron))
+            {
+                MessageBox.Show("El campo de email no es válido.");
+                return false;
+            }
+
+            return true;
+        }
+
+        // Función para validar contraseña
+        private static bool IsValidPassword(string password, string passwordConfirm)
+        {
+            // Validar que la contraseña coincida con la cotraseña de confirmacion
+            if (password != passwordConfirm)
+            {
+                MessageBox.Show("Las contraseñas no coinciden.");
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }
