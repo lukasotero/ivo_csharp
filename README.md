@@ -1,4 +1,15 @@
-# Guia de ejercicios del profesor
+# Windows Form
+## :soon: Ejercicio 1 (está en la clase 8)
+Realizar un formulario como el de la imagen de ejemplo, teniendo en cuenta las siguientes restricciones de uso:
+
+- Todos los campos deben iniciar vacios.
+- Se debe poder desplazarse por los campos a completar en orden con la tecla TAB del teclado.
+- El campo de email debe validar que sea una dirección de correo válida al presionar el botón submit, caso contrario desplegar un MessageBox que indique que el campo no es válido.
+- Los campos de contraseña deben ser "ocultos" en sus caracteres.
+- Ambos campos de contraseña deben coincidir, caso contrario desplegar un MessageBox que indique que no coinciden las contraseñas.
+- Si todos los campos están completos y válidos, informar mediante un MessageBox que todo está OK sino informar que faltan campos a completar.
+
+# Consola
 ## :heavy_check_mark: Ejercicio 8 (está en la clase 7)
 Nos piden realizar una agenda telefónica de contactos.
 Un contacto está definido por un nombre y un teléfono. Un contacto es igual a otro cuando sus nombres son iguales.
