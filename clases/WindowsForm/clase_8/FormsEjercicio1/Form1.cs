@@ -39,14 +39,22 @@ namespace FormsEjercicio1
                 return false;
             }
 
-            // Validar que el campo de email sea un email válido
+            // Validar que el campo de email tenga un arroba "@"
+            if (!email.Contains("@"))
+            {
+                MessageBox.Show("El campo de email no es válido.");
+                return false;
+            }
+
+            /* Validar que el campo de email sea un email válido
+
             string patron = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
 
             if (!Regex.IsMatch(tbEmail.Text, patron))
             {
                 MessageBox.Show("El campo de email no es válido.");
                 return false;
-            }
+            } */
 
             return true;
         }
@@ -63,6 +71,5 @@ namespace FormsEjercicio1
 
             return true;
         }
-
     }
 }
