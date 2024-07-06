@@ -1,4 +1,39 @@
+# Recuperatorio 2 (está en la 'correcciones' -> 'Consola' -> 'correcionRecuperatorio2')
+Realizar las clases necesarias.
+
+Se tienen Vehículos con las siguientes características:
+- Patente
+- Marca
+- PotenciaCV
+- Los mismos pueden saber si es un vehículo es veloz, si la PotenciaCV es mayor a 200.
+
+Existen vehículos con características particulares:
+
+1. Un tipo de Vehículo son los Taxi, que además de las características mencionadas anteriormente se le agrega un número de licencia, un valor de bajada de bandera y un precio por km.
+Además, los taxis pueden calcular el valor de un viaje basado en la cantidad de km que corresponda + la bajada de bandera correspondiente.
+
+
+2. Otro tipo de vehículo son los Colectivos, que además de las características mencionadas anteriormente se le agrega la cantidad de pasajeros que puede llevar, el número de línea y la cantidad de paradas que tiene su recorrido.
+Los colectivos pueden informar el valor del viaje basados en la cantidad de paradas que tengan que hacer, teniendo un valor de $75 por cada parada recorrida.
+
+3. Implementar Propiedades y ToString en todas las clases.
+
+4. Todos los objetos deben inicializarse con todos sus parámetros.
+
+Realizar un programa que permita probar todos los métodos de los objetos propuestos
+
 # Windows Form
+## :soon: Ejercicio 1.1 (está en la clase 9)
+Realizar las siguientes modificaciones al formulario de la Actividad 1:
+
+- El botón de submit deberá estar inhabilitado hasta que todos los campos sean correctos.
+- El campo Password deberá validar además que la contraseña sea fuerte, hasta que no se cumpla no debería habilitar el campo para repetir la contraseña.
+- El campo FullName deberán ser solo letras y espacios.
+- Los campos se validarán al quitar del foco del mismo. Se podrán agregar otros eventos para mejorar la funcionalidad.
+- El campo usuario deberá ser TODO minúscula.
+- El botón Submit deberá abrir un formulario nuevo, cerrando el anterior.
+- Para marcar los errores no se mostrará un MsgBox, sino que se deberá informar sobre el campo del formulario de alguna forma.
+
 ## :heavy_check_mark: Ejercicio 1 (está en la clase 8)
 Realizar un formulario como el de la imagen de ejemplo, teniendo en cuenta las siguientes restricciones de uso:
 
