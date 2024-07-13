@@ -1,3 +1,5 @@
+using FormsEjercicio1._1;
+
 namespace FormsEjercicio1
 {
     public partial class SingUpForm : Form
@@ -5,137 +7,176 @@ namespace FormsEjercicio1
         public SingUpForm()
         {
             InitializeComponent();
-            btnSubmit.Enabled = false; // Inicializamos el botón de submit deshabilitado (agregado en el Ejercicio 1.1)
-            tbPasswordConfirm.Enabled = false; // Inicializamos el campo de confirmar contraseña deshabilitado (agregado en el Ejercicio 1.1)
-        }
+            btnSubmit.Visible = false; // Inicializamos el botón de submit deshabilitado (agregado en el Ejercicio 1.1)
+            labelConfirmPassword.Visible = false; // Inicializamos el label de confirmar contraseña deshabilitado (agregado en el Ejercicio 1.1)
+            tbPasswordConfirm.Visible = false; // Inicializamos el campo de confirmar contraseña deshabilitado (agregado en el Ejercicio 1.1)
 
-        /*
-         * Cosas que faltan:
-         * Los campos se validarán al quitar del foco del mismo. Se podrán agregar otros eventos para mejorar la funcionalidad.
-         * El botón Submit deberá abrir un formulario nuevo, cerrando el anterior.
-         * Para marcar los errores no se mostrará un MsgBox, sino que se deberá informar sobre el campo del formulario de alguna forma.
-         */
+            // Inicializamos todos los errores en false (agregado en el Ejercicio 1.1)
+            errorFullName.Visible = false;
+            errorEmail.Visible = false;
+            errorAddress.Visible = false;
+            errorUserName.Visible = false;
+            errorPassword.Visible = false;
+            errorPasswordConfirm.Visible = false;
+
+            // Agregar eventos Leave a los TextBox para validar al perder el foco
+            tbFullName.Leave += TbFullName_Leave;
+            tbEmail.Leave += TbEmail_Leave;
+            tbUserName.Leave += TbUserName_Leave;
+            tbPassword.Leave += TbPassword_Leave;
+            tbPasswordConfirm.Leave += TbPasswordConfirm_Leave;
+            tbAddress.Leave += TbAddress_Leave;
+        }
 
         // Boton de Submit
         private void Button1_Click(object sender, EventArgs e)
         {
-            // Validar que el campo de email sea un email válido
-            if (!IsValidEmail(tbEmail.Text))
-            {
-                MessageBox.Show("El campo de email no es válido.");
-                return;
-            }
+            PanelDeLaAplicacion panel = new PanelDeLaAplicacion();
+            panel.Show(); // Mostrar el formulario de PanelDeLaAplicacion
+            this.Hide(); // Cerrar el formulario actual
+        }
 
-            // Validar si las contraseñas coinciden
-            if (!IsValidPassword(tbPassword.Text, tbPasswordConfirm.Text))
-            {
-                MessageBox.Show("El campo de email no es válido.");
-                return;
-            }
-
-            // Validar que el campo de nombre completo sea solo letras y espacios (agregado en el Ejercicio 1.1)
-            if (!IsValidFullName(tbFullName.Text))
-            {
-                MessageBox.Show("El campo de nombre completo no es válido.");
-                return;
-            }
-
-            // Validar que el campo de usuario sea todo minúscula (agregado en el Ejercicio 1.1)
-            if (!IsValidUsername(tbUserName.Text))
-            {
-                MessageBox.Show("El campo de usuario no es válido.");
-                return;
-            }
-
+        // Función para validar si todos los text box son válidos
+        private bool AreAllTextboxValid()
+        {
             // El botón de submit deberá estar inhabilitado hasta que todos los campos sean correctos (agregado en el Ejercicio 1.1)
-            if (IsValidEmail(tbEmail.Text) && IsValidPassword(tbPassword.Text, tbPasswordConfirm.Text) && IsValidFullName(tbFullName.Text) && IsValidUsername(tbUserName.Text))
+            if (!errorFullName.Visible && !errorEmail.Visible && !errorAddress.Visible && !errorUserName.Visible && !errorPassword.Visible && !errorPasswordConfirm.Visible)
             {
-                btnSubmit.Enabled = true;
+                btnSubmit.Visible = true;
+                return true;
             }
+
+            btnSubmit.Visible = false;
+            return false;
         }
 
-        // Función para validar un email
-        private bool IsValidEmail(string email)
-        {
-            // Validar que el campo de email no esté vacío
-            if (string.IsNullOrEmpty(email))
-            {
-                MessageBox.Show("El campo de email no puede estar vacío.");
-                return false;
-            }
+        // Validaciones al escribir en los campos
+        private void TbFullName_TextChanged(object sender, EventArgs e) => ValidateFullName();
+        private void TbEmail_TextChanged(object sender, EventArgs e) => ValidateEmail();
+        private void TbAddress_TextChanged(object sender, EventArgs e) => ValidateAddress();
+        private void TbUserName_TextChanged(object sender, EventArgs e) => ValidateUserName();
+        private void TbPassword_TextChanged(object sender, EventArgs e) => ValidatePassword();
+        private void TbPasswordConfirm_TextChanged(object sender, EventArgs e) => ValidatePasswordConfirm();
 
-            // Validar que el campo de email tenga un arroba "@"
-            if (!email.Contains("@"))
-            {
-                MessageBox.Show("El campo de email no es válido.");
-                return false;
-            }
+        
+        // Validaciones al perder el foco
+        private void TbFullName_Leave(object? sender, EventArgs e) => ValidateFullName();
+        private void TbEmail_Leave(object? sender, EventArgs e) => ValidateEmail();
+        private void TbUserName_Leave(object? sender, EventArgs e) => ValidateUserName();
+        private void TbPassword_Leave(object? sender, EventArgs e) => ValidatePassword();
+        private void TbPasswordConfirm_Leave(object? sender, EventArgs e) => ValidatePasswordConfirm();
+        private void TbAddress_Leave(object? sender, EventArgs e) => ValidateAddress();
 
-            return true;
-        }
 
-        // Función para validar contraseña
-        private static bool IsValidPassword(string password, string passwordConfirm)
-        {
-            // Validar que la contraseña sea fuerte, ó sea tenga máyusculas y números (agregado en el Ejercicio 1.1)
-            if (!password.Any(char.IsUpper) || !password.Any(char.IsDigit))
-            {
-                MessageBox.Show("La contraseña debe tener al menos una mayúscula y un número.");
-                return false;
-            }
-
-            // Validar que la contraseña coincida con la cotraseña de confirmacion
-            if (password != passwordConfirm)
-            {
-                MessageBox.Show("Las contraseñas no coinciden.");
-                return false;
-            }
-
-            return true;
-        }
-
-        // Función para validar nombre completo (agregado en el Ejercicio 1.1)
-        private static bool IsValidFullName(string fullName)
+        // Funciones de validación
+        private void ValidateFullName()
         {
             // Validar que el campo de nombre completo no esté vacío
-            if (string.IsNullOrEmpty(fullName))
+            if (string.IsNullOrEmpty(tbFullName.Text))
             {
-                MessageBox.Show("El campo de nombre completo no puede estar vacío.");
-                return false;
+                errorFullName.Visible = true;
+                errorFullName.Text = "El campo de nombre completo no puede estar vacío.";
             }
-
-            // Validar que el campo de nombre completo sea solo letras y espacios
-            foreach (char c in fullName)
+            else
             {
-                if (!char.IsLetter(c) && !char.IsWhiteSpace(c))
+                // Validar que el campo de nombre completo sea solo letras y espacios
+                foreach (char c in tbFullName.Text)
                 {
-                    MessageBox.Show("El campo de nombre completo no es válido.");
-                    return false;
+                    if (!char.IsLetter(c) && !char.IsWhiteSpace(c))
+                    {
+                        errorFullName.Visible = true;
+                        errorFullName.Text = "El campo de nombre completo no es válido.";
+                        return;
+                    }
                 }
+                errorFullName.Visible = false;
             }
 
-            return true;
+            AreAllTextboxValid();
         }
 
-        // Función para validar usuario (agregado en el Ejercicio 1.1)
-        private static bool IsValidUsername(string username)
+        private void ValidateEmail()
         {
-            // Validar que el campo de usuario no esté vacío
-            if (string.IsNullOrEmpty(username))
+            // Validar que el campo de email no esté vacío y tenga un arroba "@"
+            if (string.IsNullOrEmpty(tbEmail.Text) || !tbEmail.Text.Contains('@'))
             {
-                MessageBox.Show("El campo de usuario no puede estar vacío.");
-                return false;
+                errorEmail.Visible = true;
+                errorEmail.Text = "El campo de email no es válido.";
+            }
+            else
+            {
+                errorEmail.Visible = false;
             }
 
-            // Validar que el campo de usuario sea todo minúscula
-            if (username != username.ToLower())
-            {
-                MessageBox.Show("El campo de usuario no es válido.");
-                return false;
-            }
-
-            return true;
+            AreAllTextboxValid();
         }
 
+        private void ValidateAddress()
+        {
+            // Validar que el campo de dirección no esté vacío
+            if (string.IsNullOrEmpty(tbAddress.Text))
+            {
+                errorAddress.Visible = true;
+                errorAddress.Text = "El campo de dirección no puede estar vacío.";
+            }
+            else
+            {
+                errorAddress.Visible = false;
+            }
+
+            AreAllTextboxValid();
+        }
+
+        private void ValidateUserName()
+        {
+            // Validar que el campo de usuario no esté vacío y sea todo minúscula
+            if (string.IsNullOrEmpty(tbUserName.Text) || tbUserName.Text != tbUserName.Text.ToLower())
+            {
+                errorUserName.Visible = true;
+                errorUserName.Text = "El campo de usuario no es válido.";
+            }
+            else
+            {
+                errorUserName.Visible = false;
+            }
+
+            AreAllTextboxValid();
+        }
+
+        private void ValidatePassword()
+        {
+            // Validar que la contraseña sea fuerte (al menos una mayúscula y un número)
+            if (!tbPassword.Text.Any(char.IsUpper) || !tbPassword.Text.Any(char.IsDigit))
+            {
+                errorPassword.Visible = true;
+                errorPassword.Text = "La contraseña debe tener al menos una mayúscula y un número.";
+            }
+            else
+            {
+                errorPassword.Visible = false;
+                labelConfirmPassword.Visible = true;
+                tbPasswordConfirm.Visible = true;
+            }
+
+            AreAllTextboxValid();
+        }
+
+        private void ValidatePasswordConfirm()
+        {
+            // Validar que la contraseña coincida con la de confirmación
+            if (tbPassword.Text != tbPasswordConfirm.Text)
+            {
+                errorPasswordConfirm.Visible = true;
+                errorPasswordConfirm.Text = "Las contraseñas no coinciden.";
+            }
+            else
+            {
+                errorPasswordConfirm.Visible = false;
+            }
+
+            AreAllTextboxValid();
+        }
+
+        private void Label1_Click(object sender, EventArgs e) { }
     }
 }
