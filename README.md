@@ -23,7 +23,7 @@ Los colectivos pueden informar el valor del viaje basados en la cantidad de para
 Realizar un programa que permita probar todos los métodos de los objetos propuestos
 
 # Windows Form
-## :soon: Ejercicio 1.1 (está en la clase 9)
+## :heavy_check_mark: Ejercicio 1.1 (está en la clase 9)
 Realizar las siguientes modificaciones al formulario de la Actividad 1:
 
 - El botón de submit deberá estar inhabilitado hasta que todos los campos sean correctos.
