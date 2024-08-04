@@ -40,7 +40,14 @@ namespace FormsEjercicio1
         private bool AreAllTextboxValid()
         {
             // El botón de submit deberá estar inhabilitado hasta que todos los campos sean correctos (agregado en el Ejercicio 1.1)
-            if (!errorFullName.Visible && !errorEmail.Visible && !errorAddress.Visible && !errorUserName.Visible && !errorPassword.Visible && !errorPasswordConfirm.Visible)
+            if (
+                (!errorFullName.Visible && tbFullName.Text.Length > 0) && 
+                (!errorEmail.Visible && tbEmail.Text.Length > 0) && 
+                (!errorAddress.Visible && tbAddress.Text.Length > 0) && 
+                (!errorUserName.Visible && tbUserName.Text.Length > 0) && 
+                (!errorPassword.Visible && tbPassword.Text.Length > 0) && 
+                (!errorPasswordConfirm.Visible && tbPasswordConfirm.Text.Length > 0)
+                )
             {
                 btnSubmit.Visible = true;
                 return true;
@@ -58,7 +65,6 @@ namespace FormsEjercicio1
         private void TbPassword_TextChanged(object sender, EventArgs e) => ValidatePassword();
         private void TbPasswordConfirm_TextChanged(object sender, EventArgs e) => ValidatePasswordConfirm();
 
-        
         // Validaciones al perder el foco
         private void TbFullName_Leave(object? sender, EventArgs e) => ValidateFullName();
         private void TbEmail_Leave(object? sender, EventArgs e) => ValidateEmail();
