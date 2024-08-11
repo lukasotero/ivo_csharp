@@ -23,26 +23,44 @@ Los colectivos pueden informar el valor del viaje basados en la cantidad de para
 Realizar un programa que permita probar todos los métodos de los objetos propuestos
 
 # Windows Form
+## :soon: Ejercicio 2 (está en la clase 10)
+Realizar un formulario como el de la imagen de ejemplo, teniendo en cuenta las siguientes restricciones de uso:
+
+![WindowsForm - Ejercicio 1](.\clases\img\WindowsForm - Ejercicio 2.jpeg)
+
+- [X] Los campos Nombre y Apellido deben ser solo letras.
+- [X] El campo "Tipo Documento" debe desplegar las opciones 'DNI', 'LC', 'LE', 'CI'
+- [X] El campo "N Documento" debe ser numérico.
+- [X] La "Fecha de Nacimiento" debe ser de tipo FECHA.
+- [X] Solamente se debe poder seleccionar un "Tipo" de cliente.
+- [X] Se puede seleccionar más de una "Sucursal"
+- [X] Al "Enviar" el formulario se debe mostrar un cuadro de diálogo con toda la información ingresada.
+- [ ] No se podrá enviar si falta algún campo.
+- [X] Indicar mediante un mensaje de error que "Faltan completar campos"
+- [X] Al "Limpiar" el formulario debe colocar todos los campos en blanco.
+
 ## :heavy_check_mark: Ejercicio 1.1 (está en la clase 9)
 Realizar las siguientes modificaciones al formulario de la Actividad 1:
 
-- El botón de submit deberá estar inhabilitado hasta que todos los campos sean correctos.
-- El campo Password deberá validar además que la contraseña sea fuerte, hasta que no se cumpla no debería habilitar el campo para repetir la contraseña.
-- El campo FullName deberán ser solo letras y espacios.
-- Los campos se validarán al quitar del foco del mismo. Se podrán agregar otros eventos para mejorar la funcionalidad.
-- El campo usuario deberá ser TODO minúscula.
-- El botón Submit deberá abrir un formulario nuevo, cerrando el anterior.
-- Para marcar los errores no se mostrará un MsgBox, sino que se deberá informar sobre el campo del formulario de alguna forma.
+- [X] El botón de submit deberá estar inhabilitado hasta que todos los campos sean correctos.
+- [x] El campo Password deberá validar además que la contraseña sea fuerte, hasta que no se cumpla no debería habilitar el campo para repetir la contraseña.
+- [X] El campo FullName deberán ser solo letras y espacios.
+- [X] Los campos se validarán al quitar del foco del mismo. Se podrán agregar otros eventos para mejorar la funcionalidad.
+- [X] El campo usuario deberá ser TODO minúscula.
+- [X] El botón Submit deberá abrir un formulario nuevo, cerrando el anterior.
+- [X] Para marcar los errores no se mostrará un MsgBox, sino que se deberá informar sobre el campo del formulario de alguna forma.
 
 ## :heavy_check_mark: Ejercicio 1 (está en la clase 8)
 Realizar un formulario como el de la imagen de ejemplo, teniendo en cuenta las siguientes restricciones de uso:
 
-- Todos los campos deben iniciar vacios.
-- Se debe poder desplazarse por los campos a completar en orden con la tecla TAB del teclado.
-- El campo de email debe validar que sea una dirección de correo válida al presionar el botón submit, caso contrario desplegar un MessageBox que indique que el campo no es válido.
-- Los campos de contraseña deben ser "ocultos" en sus caracteres.
-- Ambos campos de contraseña deben coincidir, caso contrario desplegar un MessageBox que indique que no coinciden las contraseñas.
-- Si todos los campos están completos y válidos, informar mediante un MessageBox que todo está OK sino informar que faltan campos a completar.
+![WindowsForm - Ejercicio 1](.\clases\img\WindowsForm - Ejercicio 1.jpeg)
+
+- [X] Todos los campos deben iniciar vacios.
+- [X] Se debe poder desplazarse por los campos a completar en orden con la tecla TAB del teclado.
+- [X] El campo de email debe validar que sea una dirección de correo válida al presionar el botón submit, caso contrario desplegar un MessageBox que indique que el campo no es válido.
+- [X] Los campos de contraseña deben ser "ocultos" en sus caracteres.
+- [X] Ambos campos de contraseña deben coincidir, caso contrario desplegar un MessageBox que indique que no coinciden las contraseñas.
+- [X] Si todos los campos están completos y válidos, informar mediante un MessageBox que todo está OK sino informar que faltan campos a completar.
 
 # Consola
 ## :heavy_check_mark: Ejercicio 8 (está en la clase 7)
