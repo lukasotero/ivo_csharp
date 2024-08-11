@@ -26,7 +26,7 @@ Realizar un programa que permita probar todos los métodos de los objetos propue
 ## :soon: Ejercicio 2 (está en la clase 10)
 Realizar un formulario como el de la imagen de ejemplo, teniendo en cuenta las siguientes restricciones de uso:
 
-![WindowsForm - Ejercicio 1](.\clases\img\WindowsForm - Ejercicio 2.jpeg)
+![WindowsForm - Ejercicio 2](https://github.com/lukasotero/ivo_csharp/clases/img/WindowsForm_Ejercicio2.jpeg)
 
 - [X] Los campos Nombre y Apellido deben ser solo letras.
 - [X] El campo "Tipo Documento" debe desplegar las opciones 'DNI', 'LC', 'LE', 'CI'
@@ -53,7 +53,7 @@ Realizar las siguientes modificaciones al formulario de la Actividad 1:
 ## :heavy_check_mark: Ejercicio 1 (está en la clase 8)
 Realizar un formulario como el de la imagen de ejemplo, teniendo en cuenta las siguientes restricciones de uso:
 
-![WindowsForm - Ejercicio 1](.\clases\img\WindowsForm - Ejercicio 1.jpeg)
+![WindowsForm - Ejercicio 1](https://github.com/lukasotero/ivo_csharp/clases/img/WindowsForm_Ejercicio1.jpeg)
 
 - [X] Todos los campos deben iniciar vacios.
 - [X] Se debe poder desplazarse por los campos a completar en orden con la tecla TAB del teclado.
